@@ -1,0 +1,1 @@
+export const getWeatherWeekItems = state => state.weather.consolidatedWeather;
