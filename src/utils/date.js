@@ -5,3 +5,5 @@ const monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
 ];
 export const getMonthName = monthNumber => monthNames[monthNumber];
+
+export const dateFormatForReq = date => `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}/`;

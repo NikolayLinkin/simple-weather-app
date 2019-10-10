@@ -1,11 +1,13 @@
 import * as types from "../constants/ActionsTypes";
 import {callApi} from "../utils/api";
+import {dateFormatForReq} from "../utils/date";
 
 import {
     SEARCH_CITY_URL,
     WEEK_WEATHER_URL,
     TODAY_WEATHER_URL,
 } from "../constants/ApiConstants";
+
 import {getTodayWeather} from "../selectors/weatherSelectors";
 
 const fetchLocationSuccess = woeid => ({
@@ -43,12 +45,11 @@ const fetchTodayWeathersSuccess = (today) => ({
 });
 
 export const fetchTodayWeathers = (woeid, date) => async (dispatch, getState) => {
-    const dateFormat = date => `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}/`;
     const state = getState();
     const todayWeather = getTodayWeather(state);
 
     if(!Object.keys(todayWeather).length) {
-        const {json} = await callApi(TODAY_WEATHER_URL(woeid, dateFormat(date)));
+        const {json} = await callApi(TODAY_WEATHER_URL(woeid, dateFormatForReq(date)));
 
         dispatch(fetchTodayWeathersSuccess(json[0]));
     }
