@@ -6,6 +6,8 @@ const initialState = {
     time: null,
     sunRise: null,
     sunSet: null,
+    today: {},
+    activeTab: 'week'
 };
 
 const weather = (state=initialState, action) => {
@@ -23,6 +25,18 @@ const weather = (state=initialState, action) => {
                 time: action.time,
                 sunRise: action.sunRise,
                 sunSet: action.sunSet,
+            }
+        }
+        case types.FETCH_TODAY_WEATHERS_SUCCESS: {
+            return {
+                ...state,
+                today: action.today,
+            }
+        }
+        case types.SWITCH_TABS: {
+            return {
+                ...state,
+                activeTab: action.activeTab,
             }
         }
 
