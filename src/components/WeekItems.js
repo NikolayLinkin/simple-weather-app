@@ -2,10 +2,6 @@ import React, {Component} from "react";
 import WeekItem from "./WeekItem";
 
 class WeekItems extends Component {
-    componentDidMount() {
-        console.log(1);
-    }
-
     render() {
         const {weekItems} = this.props;
 
