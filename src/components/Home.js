@@ -53,8 +53,12 @@ class Home extends Component {
                     <WeekItems woeid={woeid}
                                weekItems={weekItems}
                     />
-                    : 'loading...'}
-                {activeTab === 'today' && Object.keys(today).length ? <Today {...today}/>: ''}
+                    : ''}
+                {activeTab === 'today' ?
+                    <Today fetchTodayWeathers={fetchTodayWeathers}
+                           woeid={woeid}
+                           today={today}
+                    />: ''}
             </div>
         );
     }

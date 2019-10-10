@@ -6,6 +6,7 @@ import {
     WEEK_WEATHER_URL,
     TODAY_WEATHER_URL,
 } from "../constants/ApiConstants";
+import {getTodayWeather} from "../selectors/weatherSelectors";
 
 const fetchLocationSuccess = woeid => ({
     type: types.FETCH_LOCATION_SUCCESS,
@@ -41,13 +42,16 @@ const fetchTodayWeathersSuccess = (today) => ({
     today,
 });
 
-export const fetchTodayWeathers = (woeid, date) => async dispatch => {
+export const fetchTodayWeathers = (woeid, date) => async (dispatch, getState) => {
     const dateFormat = date => `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}/`;
+    const state = getState();
+    const todayWeather = getTodayWeather(state);
 
-    const {json} = await callApi(TODAY_WEATHER_URL(woeid, dateFormat(date)));
-    const today = json[0];
-    console.log(today);
-    dispatch(fetchTodayWeathersSuccess(json[0]));
+    if(!Object.keys(todayWeather).length) {
+        const {json} = await callApi(TODAY_WEATHER_URL(woeid, dateFormat(date)));
+
+        dispatch(fetchTodayWeathersSuccess(json[0]));
+    }
 };
 
 export const switchTabs = activeTab => dispatch => {
