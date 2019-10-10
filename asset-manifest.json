@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/test-app-algoritmika/static/css/main.6d2a66a0.chunk.css",
+    "main.js": "/test-app-algoritmika/static/js/main.deff5ea4.chunk.js",
+    "main.js.map": "/test-app-algoritmika/static/js/main.deff5ea4.chunk.js.map",
+    "runtime-main.js": "/test-app-algoritmika/static/js/runtime-main.32edd565.js",
+    "runtime-main.js.map": "/test-app-algoritmika/static/js/runtime-main.32edd565.js.map",
+    "static/css/2.764ccc25.chunk.css": "/test-app-algoritmika/static/css/2.764ccc25.chunk.css",
+    "static/js/2.3561edb7.chunk.js": "/test-app-algoritmika/static/js/2.3561edb7.chunk.js",
+    "static/js/2.3561edb7.chunk.js.map": "/test-app-algoritmika/static/js/2.3561edb7.chunk.js.map",
+    "index.html": "/test-app-algoritmika/index.html",
+    "precache-manifest.dd12b04960804204b5db03d31438b7f2.js": "/test-app-algoritmika/precache-manifest.dd12b04960804204b5db03d31438b7f2.js",
+    "service-worker.js": "/test-app-algoritmika/service-worker.js",
+    "static/css/2.764ccc25.chunk.css.map": "/test-app-algoritmika/static/css/2.764ccc25.chunk.css.map",
+    "static/css/main.6d2a66a0.chunk.css.map": "/test-app-algoritmika/static/css/main.6d2a66a0.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.32edd565.js",
+    "static/css/2.764ccc25.chunk.css",
+    "static/js/2.3561edb7.chunk.js",
+    "static/css/main.6d2a66a0.chunk.css",
+    "static/js/main.deff5ea4.chunk.js"
+  ]
+}
