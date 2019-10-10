@@ -2,8 +2,10 @@
   "name": "test-app-algoritmika",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://nikolaylinkin.github.io/test-app-algoritmika/",
   "dependencies": {
     "camelize": "^1.0.0",
+    "gh-pages": "^2.1.1",
     "node-sass": "^4.12.0",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
@@ -22,7 +24,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeplot": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
