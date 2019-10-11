@@ -49,7 +49,7 @@ class Weather extends Component {
         }
 
         return (
-            <div className="wrapper">
+            <div className={`wrapper ${activeTab === 'today' ? `wrapper--${today.weatherStateAbbr}` : '' }`}>
                 <Tabs activeTab={activeTab} onClickTab={this.onClickTab}/>
 
                 {activeTab === 'today' ?

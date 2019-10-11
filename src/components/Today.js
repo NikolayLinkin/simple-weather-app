@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Loader from "react-loader-spinner";
+import {getMonthName, getWeekDay} from "../utils/date";
 
 class Today extends Component {
     componentDidMount() {
@@ -8,6 +9,12 @@ class Today extends Component {
     }
 
     render() {
+        const renderDate = (date) => {
+            const weekDayNumber = new Date().getDay();
+            const monthNumber = new Date().getMonth();
+            return `${getWeekDay(weekDayNumber)}, ${monthNumber} ${getMonthName(monthNumber)}`;
+        };
+
         const {
             minTemp,
             maxTemp,
@@ -21,18 +28,17 @@ class Today extends Component {
         if (Object.keys(this.props.today).length) {
             return (
                 <div className={`weather__today weather__today--${weatherStateAbbr}`}>
-                    <div className="weather__today__last-update">
-                        {created}
-                    </div>
                     <div className="weather__today__date">
-                        {applicableDate}
+                        {renderDate(applicableDate)}
                     </div>
-                    <img src={weatherStateName} alt=""/>
+                    <img src={`https://www.metaweather.com/static/img/weather/${weatherStateAbbr}.svg`}
+                         className="weather__today__img"
+                         alt=""/>
+                    <div className="weather__today__temp-type">
+                        {weatherStateName}
+                    </div>
                     <div className="weather__today__temp">
-                        <span>{theTemp.toFixed(0)}</span>
-                        <span>
-                            {maxTemp.toFixed(0)}/{minTemp.toFixed(0)}
-                        </span>
+                        {theTemp.toFixed(0)}&deg;
                     </div>
                 </div>
             );

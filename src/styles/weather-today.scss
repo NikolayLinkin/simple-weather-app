@@ -1,2 +1,28 @@
 @import "variables";
 
+.weather__today {
+  padding: 0 10px;
+}
+
+.weather__today__date {
+  font-size: 25px;
+  text-align: center;
+}
+
+.weather__today__img {
+  display: block;
+  margin: 40px auto 0;
+  max-width: 60%;
+}
+
+.weather__today__temp-type {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.weather__today__temp {
+  margin-top: 20px;
+  font-size: 40px;
+  text-align: center;
+}

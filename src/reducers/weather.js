@@ -3,7 +3,7 @@ import * as types from "../constants/ActionsTypes";
 const initialState = {
     consolidatedWeather: [],
     today: {},
-    activeTab: 'week',
+    activeTab: 'today',
     isFetching: false,
 };
 
