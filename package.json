@@ -2,7 +2,7 @@
   "name": "test-app-algoritmika",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://nikolaylinkin.github.io/test-app-algoritmika/",
+  "homepage": "https://nikolaylinkin.github.io/simple-weather-app/",
   "dependencies": {
     "camelize": "^1.0.0",
     "gh-pages": "^2.1.1",
