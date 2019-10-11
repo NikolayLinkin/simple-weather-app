@@ -22,15 +22,19 @@ const WeekItem = ({item}) => {
                     {date.getDate()} {getMonthName(date.getMonth())}
                 </div>
             </div>
-            <div className="week-item__temp">
-                <span className="week-item__temp__max">
-                    {maxTemp.toFixed(0)}
-                </span>
-                /
-                <span className="week-item__temp__min">
+            <div className="week-item__right-col">
+                <div className="week-item__temp">
+                    <span className="week-item__temp__max">
+                        {maxTemp.toFixed(0)}&deg;
+                    </span>
+                    &nbsp;/&nbsp;
+                    <span className="week-item__temp__min">
                     {minTemp.toFixed(0)}
                 </span>
-                <img src={`https://www.metaweather.com/static/img/weather/png/64/${weatherStateAbbr}.png`} alt=""/>
+                </div>
+                <img src={`https://www.metaweather.com/static/img/weather/png/64/${weatherStateAbbr}.png`}
+                     className="week-item__img"
+                     alt=""/>
             </div>
         </div>
 

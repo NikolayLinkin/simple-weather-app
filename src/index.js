@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 
 import "normalize.css";
-import './index.scss';
+import './styles/index.scss';
 
 import createStore from "./store/createStore";
 

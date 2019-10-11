@@ -1,0 +1,46 @@
+@import "./variables";
+
+.weather__week-items {
+
+}
+
+.week-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 10px;
+  border-top: 2px solid #fff;
+
+  &:last-child{
+    border-bottom: 2px solid #fff;
+  }
+
+  @each $status, $color in $weather-colors {
+    &--#{$status} {
+      background: $color;
+    }
+  }
+}
+
+.week-item__week-day {
+  font-size: 20px;
+}
+
+.week-item__month-day {
+  font-size: 15px;
+}
+
+.week-item__right-col {
+  display: flex;
+  align-items: center;
+}
+
+.week-item__temp {
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.week-item__img {
+  width: 40px;
+}

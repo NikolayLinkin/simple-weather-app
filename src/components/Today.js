@@ -37,7 +37,7 @@ class Today extends Component {
                 </div>
             );
         } else {
-            return (<Loader type="Bars" color="#cbd2d" width={50} height={50}/>)
+            return (<Loader className="loader" type="Bars" color="#cbd2d" width={50} height={50}/>)
         }
     }
 }

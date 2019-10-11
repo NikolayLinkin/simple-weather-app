@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import Loader from "react-loader-spinner";
 import WeekItem from "./WeekItem";
 
 class WeekItems extends Component {
@@ -11,13 +12,17 @@ class WeekItems extends Component {
     render() {
         const {items} = this.props;
 
-        return (
-            <div className="weather__week">
-                {items.map(item =>
-                    <WeekItem key={item.id} item={item}/>
-                )}
-            </div>
-        );
+        if(items.length) {
+            return (
+                <div className="weather__week-items">
+                    {items.map(item =>
+                        <WeekItem key={item.id} item={item}/>
+                    )}
+                </div>
+            );
+        } else {
+            return (<Loader className="loader" color="#cbd2d" type="Bars" width={50}/>)
+        }
     }
 }
 

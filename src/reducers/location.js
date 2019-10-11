@@ -1,7 +1,7 @@
 import * as types from "../constants/ActionsTypes";
 
 const initialState = {
-    woeid: 2122265,
+    woeid: 2122265,//в реальном приложении будет null
     time: null,
     sunRise: null,
     sunSet: null,

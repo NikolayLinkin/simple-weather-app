@@ -1,0 +1,19 @@
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  max-width: 250px;
+  margin: 0 auto 40px;
+  padding: 0 10px;
+}
+
+.tabs__tab {
+  font-size: 16px;
+  padding: 10px 30px;
+  border-radius: 15px;
+  cursor: pointer;
+
+  &--active {
+    background: #a0a0a0;
+    color: #fff;
+  }
+}
