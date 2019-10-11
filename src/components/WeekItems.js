@@ -2,13 +2,19 @@ import React, {Component} from "react";
 import WeekItem from "./WeekItem";
 
 class WeekItems extends Component {
+    componentDidMount() {
+        const {fetchWeekWeathers, woeid} = this.props;
+
+        fetchWeekWeathers(woeid);
+    }
+
     render() {
-        const {weekItems} = this.props;
+        const {items} = this.props;
 
         return (
             <div className="weather__week">
-                {weekItems.map(item =>
-                    <WeekItem key={item.id} weekItem={item}/>
+                {items.map(item =>
+                    <WeekItem key={item.id} item={item}/>
                 )}
             </div>
         );

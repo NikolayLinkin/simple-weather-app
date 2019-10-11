@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import Loader from "react-loader-spinner";
 
 class Today extends Component {
     componentDidMount() {
@@ -16,7 +17,8 @@ class Today extends Component {
             weatherStateAbbr,
             weatherStateName
         } = this.props.today;
-        if(Object.keys(this.props.today).length) {
+
+        if (Object.keys(this.props.today).length) {
             return (
                 <div className={`weather__today weather__today--${weatherStateAbbr}`}>
                     <div className="weather__today__last-update">
@@ -29,12 +31,15 @@ class Today extends Component {
                     <div className="weather__today__temp">
                         <span>{theTemp.toFixed(0)}</span>
                         <span>
-                    {maxTemp.toFixed(0)}/{minTemp.toFixed(0)}
-                </span>
+                            {maxTemp.toFixed(0)}/{minTemp.toFixed(0)}
+                        </span>
                     </div>
                 </div>
             );
-        } else {return (<div>Загрузка</div>)}
+        } else {
+            return (<Loader type="Bars" color="#cbd2d" width={50} height={50}/>)
+        }
     }
 }
+
 export default Today;

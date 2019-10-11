@@ -1,29 +1,25 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 
+import Loader from "react-loader-spinner";
+
 import Tabs from "./Tabs";
 import WeekItems from "./WeekItems";
 import Today from "./Today";
 
-class Home extends Component {
+class Weather extends Component {
     static propTypes = {
-        weekItems: PropTypes.array,
+        weekItems: PropTypes.array.isRequired,
+        today: PropTypes.object.isRequired,
+        woeid: PropTypes.number.isRequired,
+        activeTab: PropTypes.string.isRequired,
+        isFetching: PropTypes.bool.isRequired,
     };
 
     constructor(props) {
         super(props);
 
-        this.state = {
-            openTab: 'week'
-        };
-
         this.onClickTab = this.onClickTab.bind(this);
-    }
-
-    componentDidMount() {
-        const {fetchLocation} = this.props;
-
-        fetchLocation('moscow');
     }
 
     onClickTab(tabName) {
@@ -40,28 +36,36 @@ class Home extends Component {
     render() {
         const {
             weekItems,
+            fetchWeekWeathers,
             fetchTodayWeathers,
             woeid,
             activeTab,
             today,
+            isFetching,
         } = this.props;
+
+        if(isFetching) {
+            return (<Loader type="Bars" color="#cbd2d" width={50} height={50}/>)
+        }
 
         return (
             <div className="wrapper">
                 <Tabs activeTab={activeTab} onClickTab={this.onClickTab}/>
-                {activeTab === 'week' ?
-                    <WeekItems woeid={woeid}
-                               weekItems={weekItems}
-                    />
-                    : ''}
+
                 {activeTab === 'today' ?
                     <Today fetchTodayWeathers={fetchTodayWeathers}
                            woeid={woeid}
                            today={today}
-                    />: ''}
+                    /> : ''}
+                {activeTab === 'week' ?
+                    <WeekItems fetchWeekWeathers={fetchWeekWeathers}
+                               woeid={woeid}
+                               items={weekItems}
+                    />
+                    : ''}
             </div>
         );
     }
 }
 
-export default Home;
+export default Weather;

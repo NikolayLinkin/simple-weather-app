@@ -9,7 +9,7 @@ import createStore from "./store/createStore";
 
 import {Provider} from "react-redux";
 import {AppContainer} from "react-hot-loader";
-import HomeContainer from "./containers/HomeContainer";
+import HomeContainer from "./containers/WeatherContainer";
 
 const render = (Component) => {
     ReactDOM.render(

@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import Home from "../components/Home";
+import Weather from "../components/Weather";
 
 import {
     fetchLocation,
@@ -12,17 +12,19 @@ import {
     getWeatherWeekItems,
     getWoeid,
     getTodayWeather,
-    getActiveTab,
+    getWeatherActiveTab,
+    weatherFetching,
 } from "../selectors/weatherSelectors";
 
-const HomeContainer = props => <Home {...props}/>;
+const WeatherContainer = props => <Weather {...props}/>;
 
 const mapStateToProps = state => {
     return {
         weekItems: getWeatherWeekItems(state),
         woeid: getWoeid(state),
         today: getTodayWeather(state),
-        activeTab: getActiveTab(state),
+        activeTab: getWeatherActiveTab(state),
+        isFetching: weatherFetching(state),
     }
 };
 
@@ -31,4 +33,4 @@ export default connect(mapStateToProps, {
     fetchTodayWeathers,
     switchTabs,
     fetchWeekWeathers,
-})(HomeContainer);
+})(WeatherContainer);

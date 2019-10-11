@@ -1,7 +1,7 @@
 import React from "react";
 import {getWeekDay, getMonthName} from "../utils/date";
 
-const WeekItem = ({weekItem}) => {
+const WeekItem = ({item}) => {
 
     const {
         weatherStateName,
@@ -9,7 +9,7 @@ const WeekItem = ({weekItem}) => {
         minTemp,
         maxTemp,
         applicableDate,
-    } = weekItem;
+    } = item;
 
     const date = new Date(applicableDate);
     return (

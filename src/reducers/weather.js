@@ -1,13 +1,10 @@
 import * as types from "../constants/ActionsTypes";
 
 const initialState = {
-    woeid: null,
     consolidatedWeather: [],
-    time: null,
-    sunRise: null,
-    sunSet: null,
     today: {},
-    activeTab: 'week'
+    activeTab: 'week',
+    isFetching: false,
 };
 
 const weather = (state=initialState, action) => {

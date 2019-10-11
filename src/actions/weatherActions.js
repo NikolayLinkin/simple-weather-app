@@ -20,7 +20,7 @@ export const fetchLocation = (cityName) => async dispatch => {
     const {woeid} = json[0];
 
     dispatch(fetchLocationSuccess(woeid));
-    dispatch(fetchWeekWeathers(woeid));
+    // dispatch(fetchWeekWeathers(woeid));
 };
 
 const fetchWeekWeathersSuccess = (consolidatedWeather, time, sunRise, sunSet) => ({
