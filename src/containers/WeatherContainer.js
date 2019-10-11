@@ -3,7 +3,6 @@ import {connect} from "react-redux";
 import Weather from "../components/Weather";
 
 import {
-    fetchLocation,
     fetchTodayWeathers,
     switchTabs,
     fetchWeekWeathers,
@@ -29,7 +28,6 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps, {
-    fetchLocation,
     fetchTodayWeathers,
     switchTabs,
     fetchWeekWeathers,

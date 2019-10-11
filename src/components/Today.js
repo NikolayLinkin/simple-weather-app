@@ -9,17 +9,14 @@ class Today extends Component {
     }
 
     render() {
-        const renderDate = (date) => {
+        const renderDate = () => {
             const weekDayNumber = new Date().getDay();
             const monthNumber = new Date().getMonth();
             return `${getWeekDay(weekDayNumber)}, ${monthNumber} ${getMonthName(monthNumber)}`;
         };
 
         const {
-            minTemp,
-            maxTemp,
             theTemp,
-            created,
             applicableDate,
             weatherStateAbbr,
             weatherStateName

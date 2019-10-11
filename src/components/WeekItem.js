@@ -4,7 +4,6 @@ import {getWeekDay, getMonthName} from "../utils/date";
 const WeekItem = ({item}) => {
 
     const {
-        weatherStateName,
         weatherStateAbbr,
         minTemp,
         maxTemp,

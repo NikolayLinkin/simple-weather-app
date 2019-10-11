@@ -3,25 +3,11 @@ import {callApi} from "../utils/api";
 import {dateFormatForReq} from "../utils/date";
 
 import {
-    SEARCH_CITY_URL,
     WEEK_WEATHER_URL,
     TODAY_WEATHER_URL,
 } from "../constants/ApiConstants";
 
 import {getTodayWeather} from "../selectors/weatherSelectors";
-
-const fetchLocationSuccess = woeid => ({
-    type: types.FETCH_LOCATION_SUCCESS,
-    woeid,
-});
-
-export const fetchLocation = (cityName) => async dispatch => {
-    const {json} = await callApi(SEARCH_CITY_URL(cityName));
-    const {woeid} = json[0];
-
-    dispatch(fetchLocationSuccess(woeid));
-    // dispatch(fetchWeekWeathers(woeid));
-};
 
 const fetchWeekWeathersSuccess = (consolidatedWeather, time, sunRise, sunSet) => ({
     type: types.FETCH_WEEK_WEATHERS_SUCCESS,

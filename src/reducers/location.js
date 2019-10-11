@@ -8,7 +8,6 @@ const initialState = {
 };
 
 //редюсер для эмуляции реальной работы приложения
-//экшен выполняется в другом компонете(поиск) из которого компонент weather получает id локации
 const location = (state=initialState, action) => {
     switch(action.type) {
         case types.FETCH_LOCATION_SUCCESS: {
